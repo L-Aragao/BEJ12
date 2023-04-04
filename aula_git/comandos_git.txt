@@ -1,9 +1,5 @@
 Comandos basicos do GIT
 
-#Alteracao para teste
-#Outra alteração
-
-
 # Suporte https://business-science.github.io/shiny-production-with-aws-book/git-command-line-interface-cli.html
 
 #comandos de config
@@ -70,4 +66,10 @@ git branch --h
 git branch -d <branch>
 
 # Comando para configurar usario git
-git config 
+git config
+
+# Comando para excluir alteração sem git add e commit
+git checkout .
+
+# Comando para excluir alteração
+git reset --hard
