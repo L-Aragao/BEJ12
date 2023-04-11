@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title">Revisao HMTL e Javascript</title>
+</head>
+<body>
+    <h1>Revisao HTML e Javascript</h1>
+    <div id="texto1">texto</div>
+    <input type="button" onclick="funcaoClique()" value="mudar texto" ></input>
+    
+    <script>
+        function funcaoClique(){
+            // documento = document.getElementByName("texto1") ** verificar o pq do erro
+            documento = document.getElementById("texto1")
+            // documento.innerHTML = `<h1>"Hello world"<h1>`
+            documento.innerHTML += "Mudou o texto"
+
+            documento2 = document.getElementById("title")
+            documento2.innerHTML = "Backend é mais legal"
+        }
+    </script>
+
+</body>
+</html>
