@@ -24,9 +24,3 @@ resultado.then( // conseguimos utiliza o then em uma promise retornar pelo async
 )
 
 
-// const { promisify } = require("util")
-
-// // Usando promisify para lidar com o setTimeout
-// const calculoDobro = async (numero) => {
-//     return await promisify(setTimeout)(2*1000, numero*2)
-// }

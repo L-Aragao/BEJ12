@@ -1,0 +1,2 @@
+Teste promises 1
+Teste promises 2
