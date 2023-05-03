@@ -13,16 +13,29 @@ const escrita = (pathFileName, conteudo) => new Promise((resolve, reject) => {
     })
 })
 
-const leitura = (pathFileName) => new Promise((resolve, reject) => {
-    fs.readFile(pathFileName, "UTF-8", (err, contents) => {
-        if (err) {
-            reject(err)
-        }
-        else {
-            resolve(contents)
-        }
+// const leitura = (pathFileName) => new Promise((resolve, reject) => {
+//     fs.readFile(pathFileName, "UTF-8", (err, contents) => {
+//         if (err) {
+//             reject(err)
+//         }
+//         else {
+//             resolve(contents)
+//         }
+//     })
+// })
+
+function leitura(x){
+    return new Promise ((resolve, reject) =>{
+        fs.readFile(x, "UTF-8", (err, contents)=>{
+            if(err){
+                reject(err)
+            }
+            else{
+                resolve(contents)
+            }
+        })
     })
-})
+}
 
 // escrita(diretorio + "/teste3.txt", "Teste promises")
 //     .then(() => leitura(diretorio + "/teste3.txt"))
@@ -30,10 +43,14 @@ const leitura = (pathFileName) => new Promise((resolve, reject) => {
 
 
 let arquivo = leitura(diretorio + "/teste3.txt")
+console.log(arquivo)// promise pendente
+
 arquivo
     .then(result => console.log(result))
-    .then(escrita(diretorio + "/teste4.txt", "Teste promises"))
-    .then(leitura)
+    .then(escrita(diretorio + "/teste4.txt", "Teste promises2"))
+    .then(() => leitura(diretorio + "/teste4.txt"))
+    .then(result => console.log(result))
+    // .catch(err => console.log(err))
 
 //util => promisify
 
@@ -42,7 +59,8 @@ arquivo
 //     return await promisify(setTimeout)(2*1000, numero*2)
 // }
 
-const fs2 = require('fs/promises')
+const fs2 = require('fs/promises');
+const { resolve } = require("path");
 
 let arquivo2 = fs2.readFile(diretorio + "/teste3.txt", "UTF-8")
 arquivo2.then(resultado => console.log(resultado))
