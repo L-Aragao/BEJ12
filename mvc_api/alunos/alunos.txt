@@ -1,0 +1,1 @@
+{"nome":"PEACH","idade":"13","serie":"2B"},{"nome":"MARIO","idade":"14","serie":"3A"},{"nome":"YOSHI","idade":"16","serie":"4A"}
