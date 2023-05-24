@@ -1,6 +1,7 @@
 const express = require('express')
 
 const routes = express.Router();
+const controller = require('./controller/contralador')
 
 //recupera alunos
 routes.get('/alunos/', (req, res) =>  { res.send(recuperaAlunos(req))});
